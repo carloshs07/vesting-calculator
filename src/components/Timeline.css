@@ -1,0 +1,602 @@
+/* Timeline.css */
+.timeline-container {
+  width: 100%;
+}
+
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.timeline-header h2 {
+  margin: 0;
+  color: #1e293b;
+  font-size: 1.5rem;
+}
+
+.timeline-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.current-period {
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 10px rgba(139, 92, 246, 0.3);
+}
+
+/* Chart Container */
+.chart-container {
+  height: 400px;
+  margin: 2rem 0;
+  background: #fafbfc;
+  border-radius: 12px;
+  padding: 1rem;
+  border: 1px solid #e2e8f0;
+}
+
+/* Timeline Controls */
+.timeline-controls {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem 0;
+  border: 1px solid #e2e8f0;
+}
+
+.slider-container {
+  margin-bottom: 2rem;
+}
+
+.slider-container label {
+  display: block;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.current-period-indicator {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 15px;
+  margin-bottom: 1rem;
+  box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
+}
+
+.period-text {
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.progress-text {
+  font-weight: 500;
+  opacity: 0.9;
+  font-size: 0.9rem;
+}
+
+.timeline-slider {
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background: #e2e8f0;
+  outline: none;
+  -webkit-appearance: none;
+  margin-bottom: 1rem;
+}
+
+.timeline-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(139, 92, 246, 0.4);
+  transition: transform 0.2s ease;
+}
+
+.timeline-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+}
+
+.timeline-slider::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 10px rgba(139, 92, 246, 0.4);
+}
+
+.slider-labels {
+  display: flex;
+  justify-content: space-between;
+  color: #64748b;
+  font-size: 0.85rem;
+  margin-bottom: 2rem;
+}
+
+/* Navigation Buttons */
+.timeline-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.nav-button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+  background: white;
+  color: #374151;
+  border: 2px solid #e5e7eb;
+}
+
+.nav-button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  color: white;
+  border-color: #8b5cf6;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+}
+
+.nav-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: #f3f4f6;
+  color: #9ca3af;
+}
+
+.nav-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* Event Indicators */
+.event-indicators {
+  margin: 2rem 0;
+}
+
+.event-legend {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.legend-color {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+}
+
+.grant-color {
+  background: rgba(168, 85, 247, 0.7);
+}
+
+.vest-color {
+  background: rgba(245, 101, 101, 0.7);
+}
+
+.event-notification {
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 0.5rem 0;
+  font-weight: 500;
+  text-align: center;
+  animation: slideIn 0.3s ease;
+}
+
+.grant-event {
+  background: rgba(168, 85, 247, 0.1);
+  color: #7c3aed;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+.vest-event {
+  background: rgba(245, 101, 101, 0.1);
+  color: #dc2626;
+  border: 1px solid rgba(245, 101, 101, 0.3);
+}
+
+/* Progress Bar */
+.timeline-summary {
+  margin-top: 2rem;
+}
+
+.progress-bar {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid #e2e8f0;
+}
+
+.progress-label {
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.progress-track {
+  width: 100%;
+  height: 12px;
+  background: #e2e8f0;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(135deg, #34d399, #059669);
+  border-radius: 6px;
+  transition: width 0.3s ease;
+  position: relative;
+}
+
+.progress-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    transparent 25%,
+    rgba(255, 255, 255, 0.2) 25%,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 50%,
+    transparent 75%,
+    rgba(255, 255, 255, 0.2) 75%
+  );
+  background-size: 20px 20px;
+  animation: progressStripes 1s linear infinite;
+}
+
+.progress-text {
+  text-align: right;
+  font-weight: 600;
+  color: #059669;
+  font-size: 0.9rem;
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* End Period Summaries */
+.end-period-summaries {
+  display: grid;
+  gap: 2rem;
+  margin-top: 2rem;
+  grid-template-columns: 2fr 1fr;
+}
+
+.vested-by-year-section {
+  background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.vested-by-year-section h4 {
+  margin: 0 0 1.5rem 0;
+  color: #1e293b;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-align: center;
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.vested-by-year-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.vested-year-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.vested-year-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.vested-year-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+}
+
+.vested-year-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.vested-year-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #1e293b;
+}
+
+.vested-percentage {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #8b5cf6;
+  background: rgba(139, 92, 246, 0.1);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+}
+
+.vested-year-stats {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.vested-stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.vested-stat:last-child {
+  border-bottom: none;
+}
+
+.vested-stat-label {
+  font-weight: 500;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.vested-stat-value {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.vested-stat-value.granted {
+  color: #3b82f6;
+}
+
+.vested-stat-value.vested {
+  color: #10b981;
+}
+
+.vested-stat-value.remaining {
+  color: #f59e0b;
+}
+
+.vested-progress-bar {
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.vested-progress-fill {
+  height: 100%;
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  border-radius: 4px;
+  transition: width 0.6s ease;
+  position: relative;
+}
+
+.vested-progress-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.remaining-stocks-section {
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid #f59e0b;
+  box-shadow: 0 4px 20px rgba(245, 158, 11, 0.1);
+}
+
+.remaining-stocks-section h4 {
+  margin: 0 0 1.5rem 0;
+  color: #92400e;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.remaining-batch {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+  border-left: 4px solid #f59e0b;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.remaining-batch:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .end-period-summaries {
+    grid-template-columns: 1fr;
+  }
+  
+  .vested-by-year-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .current-period-indicator {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+  
+  .vested-by-year-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .vested-year-card {
+    padding: 1rem;
+  }
+  
+  .remaining-stocks-section,
+  .vested-by-year-section {
+    padding: 1.5rem;
+  }
+}
+
+@keyframes progressStripes {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 20px;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .timeline-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .timeline-header h2 {
+    font-size: 1.3rem;
+  }
+  
+  .current-period {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+  
+  .chart-container {
+    height: 300px;
+    padding: 0.5rem;
+  }
+  
+  .timeline-controls {
+    padding: 1.5rem;
+  }
+  
+  .timeline-buttons {
+    gap: 0.5rem;
+  }
+  
+  .nav-button {
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+  }
+  
+  .event-legend {
+    gap: 1rem;
+  }
+  
+  .legend-item {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .nav-button {
+    width: 100%;
+  }
+  
+  .event-legend {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .chart-container {
+    height: 250px;
+  }
+}

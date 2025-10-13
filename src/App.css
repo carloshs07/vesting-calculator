@@ -1,0 +1,419 @@
+/* App.css */
+.App {
+  text-align: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #ec4899 100%);
+  color: #333;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+.App-header {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.App-header h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.App-header p {
+  margin: 0;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem 2rem 1rem;
+  align-items: start;
+  position: relative;
+}
+
+/* Configuration Panel */
+.config-panel {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  height: fit-content;
+  position: sticky;
+  top: 2rem;
+}
+
+.config-panel h2 {
+  margin-top: 0;
+  color: #374151;
+  font-size: 1.5rem;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 0.5rem;
+}
+
+.config-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.config-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.config-item label {
+  font-weight: 600;
+  color: #374151;
+  font-size: 0.9rem;
+}
+
+.config-item input {
+  padding: 0.75rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+.config-item input:focus {
+  outline: none;
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+/* Summary Section */
+.summary {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid #e2e8f0;
+}
+
+.summary h3 {
+  margin: 0 0 1rem 0;
+  color: #1e293b;
+  font-size: 1.2rem;
+}
+
+.summary-stats {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.stat:last-child {
+  border-bottom: none;
+}
+
+.stat .label {
+  font-weight: 500;
+  color: #64748b;
+}
+
+.stat .value {
+  font-weight: 700;
+  color: #1e293b;
+  font-size: 1.1rem;
+}
+
+/* Stocks per Year Section */
+.stocks-per-year-section {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.stocks-per-year-section h3 {
+  margin: 0 0 1rem 0;
+  color: #1e293b;
+  font-size: 1.2rem;
+}
+
+.stocks-per-year-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1rem;
+}
+
+/* Remaining Stocks Section */
+.remaining-stocks-section {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 2px solid #10b981;
+  background: #ecfdf5;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.remaining-stocks-section h4 {
+  margin: 0 0 1rem 0;
+  color: #047857;
+  font-size: 1.1rem;
+}
+
+.remaining-stocks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.remaining-batch {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  background: white;
+  border-radius: 6px;
+  border-left: 3px solid #8b5cf6;
+}
+
+.batch-year {
+  font-weight: 600;
+  color: #374151;
+}
+
+.batch-stocks {
+  font-weight: 700;
+  color: #8b5cf6;
+}
+
+.no-remaining {
+  text-align: center;
+  color: #10b981;
+  font-weight: 600;
+  margin: 0;
+  font-style: italic;
+}
+
+/* Floating Summary Panel */
+.floating-summary {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 0 30px rgba(139, 92, 246, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  z-index: 1000;
+  min-width: 280px;
+  animation: slideInFloat 0.6s ease;
+}
+
+@keyframes slideInFloat {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.floating-summary h3 {
+  margin: 0 0 1rem 0;
+  color: #1f2937;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-align: center;
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.floating-summary-stats {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.floating-stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  border-left: 4px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.floating-stat:hover {
+  transform: translateX(2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.floating-stat.total {
+  border-left-color: #3b82f6;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(59, 130, 246, 0.05));
+}
+
+.floating-stat.vested {
+  border-left-color: #10b981;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.05));
+}
+
+.floating-stat.unvested {
+  border-left-color: #f59e0b;
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(245, 158, 11, 0.05));
+}
+
+.floating-stat.grant {
+  border-left-color: #8b5cf6;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(139, 92, 246, 0.08));
+  animation: pulse 2s infinite;
+}
+
+.floating-stat.vest {
+  border-left-color: #ef4444;
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.15), rgba(239, 68, 68, 0.08));
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+.floating-label {
+  font-weight: 600;
+  color: #4b5563;
+  font-size: 0.9rem;
+}
+
+.floating-value {
+  font-weight: 700;
+  color: #1f2937;
+  font-size: 1rem;
+}
+
+/* Select styling */
+.config-item select {
+  padding: 0.75rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: white;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.config-item select:focus {
+  outline: none;
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+/* Timeline Container */
+.timeline-container {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .main-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .config-panel {
+    position: static;
+  }
+  
+  .floating-summary {
+    position: relative;
+    top: auto;
+    right: auto;
+    margin: 0 auto 2rem auto;
+    max-width: 400px;
+  }
+  
+  .App-header h1 {
+    font-size: 2rem;
+  }
+  
+  .App-header p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    padding: 0 0.5rem 2rem 0.5rem;
+  }
+  
+  .config-panel,
+  .timeline-container {
+    padding: 1.5rem;
+  }
+  
+  .floating-summary {
+    margin: 0 0.5rem 2rem 0.5rem;
+    padding: 1rem;
+    min-width: auto;
+  }
+  
+  .floating-summary-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .App-header {
+    padding: 1.5rem;
+  }
+  
+  .App-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .config-grid {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .config-panel,
+  .timeline-container {
+    padding: 1rem;
+    margin: 0 0.5rem;
+  }
+  
+  .App-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .main-container {
+    padding: 0 0 2rem 0;
+  }
+}
