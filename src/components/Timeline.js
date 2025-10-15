@@ -3,8 +3,6 @@ import React, { useRef, useEffect } from 'react';
 import { Chart } from 'react-chartjs-2';
 import './Timeline.css';
 
-
-
 const Timeline = ({ data, currentMonth, totalMonths, onMonthChange, config }) => {
   const chartRef = useRef();
 
